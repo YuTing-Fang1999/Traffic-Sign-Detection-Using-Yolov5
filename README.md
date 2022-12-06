@@ -1,4 +1,4 @@
-"# Traffic-Sign-Detection-Using-Yolov5" 
+# Traffic-Sign-Detection-Using-Yolov5
 
 ```
 git clone https://github.com/YuTing-Fang1999/Traffic-Sign-Detection-Using-Yolov5.git
