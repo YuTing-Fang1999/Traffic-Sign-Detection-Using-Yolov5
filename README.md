@@ -1,8 +1,11 @@
 # Traffic-Sign-Detection-Using-Yolov5
 
+download
 ```
 git clone https://github.com/YuTing-Fang1999/Traffic-Sign-Detection-Using-Yolov5.git
-cd Traffic-Sign-Detection-Using-Yolov5
+```
+enter to yolov5
+```
 cd yolov5
 ```
 
