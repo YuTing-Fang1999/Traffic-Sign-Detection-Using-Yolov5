@@ -39,7 +39,9 @@ import torch
 ### voice ###
 import pyttsx3
 import threading
+import pygame
 
+pygame.mixer.init()
 engine = pyttsx3.init()
 
 def say(text):
@@ -49,8 +51,15 @@ def say(text):
     ).start()
 
 def run_pyttsx3(text):
-    engine.say(text)
+    outfile = "voice.wav"
+    pygame.mixer.music.unload()
+    engine.save_to_file(text, outfile)
     engine.runAndWait()
+    pygame.mixer.music.load(outfile)
+    pygame.mixer.music.play()
+
+def stop_voice():
+    pygame.mixer.music.stop()
 ### voice ###
 
 FILE = Path(__file__).resolve()
@@ -194,14 +203,15 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
 
                         label = label.split(" ")[0]
-                        print('現在時速', label)
                         if LABEL!=label:
                             BAR=THR
                         else: 
                             BAR-=1
                         LABEL=label
                         if BAR==0:
-                            say("前方有測速照相,限速{}公里".format(label))
+                            stop_voice()
+                            run_pyttsx3("前方有測速照相,限速{}公里".format(label))
+                            # say("前方有測速照相,限速{}公里".format(label))
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
