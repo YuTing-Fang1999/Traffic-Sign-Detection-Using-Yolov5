@@ -38,17 +38,10 @@ import torch
 
 ### voice ###
 import pyttsx3
-import threading
 import pygame
 
 pygame.mixer.init()
 engine = pyttsx3.init()
-
-def say(text):
-    print(text)
-    threading.Thread(
-        target=lambda: run_pyttsx3(text), daemon=True
-    ).start()
 
 def run_pyttsx3(text):
     outfile = "voice.wav"
@@ -210,8 +203,7 @@ def run(
                         LABEL=label
                         if BAR==0:
                             stop_voice()
-                            run_pyttsx3("前方有測速照相,限速{}公里".format(label))
-                            # say("前方有測速照相,限速{}公里".format(label))
+                            run_pyttsx3("目前限速{}公里".format(label))
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
