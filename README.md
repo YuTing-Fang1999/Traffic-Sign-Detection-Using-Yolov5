@@ -27,7 +27,7 @@ results are saved in runs/detect/exp
 
 video  
 ```
-python detect.py --weights best1.pt --img 960 --conf 0.8 --source  test_img/1.mp4 --line-thickness 4
+python detect.py --weights best2.pt --img 960 --conf 0.8 --source  test_video --line-thickness 4
 ```
 
 # Reference
