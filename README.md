@@ -30,5 +30,8 @@ video
 python detect.py --weights best2.pt --img 960 --conf 0.8 --source  test_video --line-thickness 4
 ```
 
+youtube  
+https://youtu.be/J61DKDsDu-4
+
 # Reference
 Jocher, G. (2020). YOLOv5 by Ultralytics (Version 7.0) [Computer software]. https://doi.org/10.5281/zenodo.3908559
